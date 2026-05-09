@@ -72,6 +72,7 @@ function berikanAksiKeTombolBaru(baris) {
     if (this.checked) {
       teksTugas.classList.add("task-done");
       tbodyDone.appendChild(baris);
+    } else {
       teksTugas.classList.remove("task-done");
       tbodyToDo.appendChild(baris);
     }
