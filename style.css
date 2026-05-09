@@ -1,10 +1,8 @@
-/* --- Reset & Base Styling --- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:
-    "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Sesuai keinginan awal Anda */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -14,7 +12,6 @@ body {
   line-height: 1.6;
 }
 
-/* --- Header Responsif --- */
 .header {
   font-weight: 600;
   display: flex;
@@ -23,7 +20,7 @@ body {
   padding: 1.5rem 10%;
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  flex-wrap: wrap; /* Memungkinkan elemen turun jika layar sempit */
+  flex-wrap: wrap;
   gap: 15px;
 }
 
@@ -37,7 +34,6 @@ body {
   font-size: 14px;
 }
 
-/* --- Container Umum --- */
 .input-section,
 .table-section {
   width: 90%;
@@ -56,7 +52,6 @@ h2 {
   padding-left: 10px;
 }
 
-/* --- Form Input --- */
 .input-text {
   width: 100%;
   min-height: 100px;
@@ -70,14 +65,14 @@ h2 {
 
 .level {
   display: flex;
-  flex-wrap: wrap; /* Agar radio button tidak terpotong di layar kecil */
+  flex-wrap: wrap;
   align-items: center;
   gap: 15px;
   margin-bottom: 20px;
 }
 
 .btn-submit {
-  width: 100%; /* Tombol penuh di layar kecil */
+  width: 100%;
   max-width: 200px;
   padding: 12px;
   background-color: #0056b3;
@@ -93,15 +88,14 @@ h2 {
   background-color: #003d7a;
 }
 
-/* --- Tabel Responsif --- */
 .table-container {
-  overflow-x: auto; /* Penting: Membuat tabel bisa di-scroll ke samping di HP */
+  overflow-x: auto;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 500px; /* Menjaga agar tabel tidak terlalu menciut */
+  min-width: 500px;
 }
 
 th,
@@ -121,7 +115,6 @@ th {
   color: #aaa;
 }
 
-/* --- Tombol Aksi --- */
 .btn-delete {
   background-color: #e74c3c;
   color: white;
@@ -143,24 +136,19 @@ th {
   font-weight: bold;
 }
 
-/* ==========================================
-   MEDIA QUERIES (LOGIKA RESPONSIF)
-   ========================================== */
-
-/* Layar Tablet & HP (Di bawah 768px) */
 @media (max-width: 768px) {
   .header {
-    flex-direction: column; /* Header jadi menumpuk ke bawah */
+    flex-direction: column;
     text-align: center;
   }
 
   .level {
-    justify-content: center; /* Radio button rata tengah di HP */
+    justify-content: center;
     font-size: 12px;
   }
 
   .btn-submit {
-    max-width: 100%; /* Tombol jadi lebar penuh */
+    max-width: 100%;
   }
 
   h2 {
@@ -168,7 +156,6 @@ th {
   }
 }
 
-/* Layar Sangat Kecil (Di bawah 480px) */
 @media (max-width: 480px) {
   .input-section,
   .table-section {

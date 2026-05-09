@@ -37,11 +37,11 @@ btnSubmit.addEventListener("click", function () {
 
   if (nilaiTugas.trim() === "") {
     alert("Tugas tidak boleh kosong!");
-    return; // Hentikan fungsi di sini
+    return;
   }
   if (!prioritasDipilih) {
     alert("Pilih level prioritas terlebih dahulu!");
-    return; // Hentikan fungsi di sini
+    return;
   }
 
   const barisBaru = document.createElement("tr");
