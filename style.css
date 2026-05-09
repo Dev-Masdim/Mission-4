@@ -1,115 +1,177 @@
-body {
+/* --- Reset & Base Styling --- */
+* {
   margin: 0;
-  min-height: 100vh;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f9f9f9;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:
+    "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Sesuai keinginan awal Anda */
 }
 
-/* --- Header --- */
+body {
+  min-height: 100vh;
+  background-color: #f4f7f6;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* --- Header Responsif --- */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5%;
+  padding: 1.5rem 5%;
   background-color: white;
-  border-bottom: 2px solid #eee;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap; /* Memungkinkan elemen turun jika layar sempit */
+  gap: 15px;
 }
 
-.profile p,
-.time p {
-  margin: 5px 0;
-  font-weight: bold;
+.logo img {
+  max-width: 120px;
+  height: auto;
 }
 
-/* --- Area Input --- */
-.input-section {
-  padding: 2rem 5%;
+.profile,
+.time {
+  font-size: 14px;
+}
+
+/* --- Container Umum --- */
+.input-section,
+.table-section {
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
   background-color: white;
-  margin: 20px 5%;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  border-left: 5px solid #0056b3;
+  padding-left: 10px;
+}
+
+/* --- Form Input --- */
 .input-text {
   width: 100%;
-  height: 80px;
-  padding: 10px;
+  min-height: 100px;
+  padding: 15px;
+  border: 1px solid #ddd;
   border-radius: 5px;
-  border: 1px solid #ccc;
-  font-family: inherit;
-  resize: vertical; /* Biarkan user bisa mengubah tinggi textarea */
+  font-size: 16px;
+  margin-bottom: 15px;
+  resize: vertical;
 }
 
 .level {
   display: flex;
-  margin: 15px 0;
+  flex-wrap: wrap; /* Agar radio button tidak terpotong di layar kecil */
   align-items: center;
-  gap: 10px;
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
 .btn-submit {
-  padding: 10px 30px;
+  width: 100%; /* Tombol penuh di layar kecil */
+  max-width: 200px;
+  padding: 12px;
   background-color: #0056b3;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
+  transition: 0.3s;
 }
 
 .btn-submit:hover {
-  background-color: #004494;
+  background-color: #003d7a;
 }
 
-/* --- Tabel To Do & Done --- */
-.table-section {
-  padding: 1rem 5%;
-  margin: 20px 5%;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+/* --- Tabel Responsif --- */
+.table-container {
+  overflow-x: auto; /* Penting: Membuat tabel bisa di-scroll ke samping di HP */
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
+  min-width: 500px; /* Menjaga agar tabel tidak terlalu menciut */
 }
 
 th,
 td {
-  border: 1px solid #ddd;
   padding: 12px;
   text-align: left;
+  border-bottom: 1px solid #eee;
 }
 
 th {
-  background-color: #f2f2f2;
+  background-color: #f8f9fa;
+  color: #555;
 }
 
-/* Styling untuk teks yang dicoret di tabel Done */
 .task-done {
   text-decoration: line-through;
-  color: gray;
+  color: #aaa;
 }
 
 /* --- Tombol Aksi --- */
 .btn-delete {
-  background-color: #dc3545;
+  background-color: #e74c3c;
   color: white;
   border: none;
-  padding: 5px 10px;
+  padding: 6px 12px;
   border-radius: 4px;
   cursor: pointer;
 }
 
 .btn-delete-all {
-  margin-top: 20px;
-  background-color: #dc3545;
+  display: block;
+  margin: 20px 0 0 auto;
+  background-color: #c0392b;
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
+}
+
+/* ==========================================
+   MEDIA QUERIES (LOGIKA RESPONSIF)
+   ========================================== */
+
+/* Layar Tablet & HP (Di bawah 768px) */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Header jadi menumpuk ke bawah */
+    text-align: center;
+  }
+
+  .level {
+    justify-content: center; /* Radio button rata tengah di HP */
+    font-size: 12px;
+  }
+
+  .btn-submit {
+    max-width: 100%; /* Tombol jadi lebar penuh */
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Layar Sangat Kecil (Di bawah 480px) */
+@media (max-width: 480px) {
+  .input-section,
+  .table-section {
+    width: 95%;
+    padding: 15px;
+  }
 }
